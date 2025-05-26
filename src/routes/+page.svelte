@@ -1,1 +1,1 @@
-<div class="notification is-primary">Hello from Donation!</div>
+<div class="notification is-primary">Hello from Locations!</div>
