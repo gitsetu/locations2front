@@ -3,4 +3,4 @@
     subTitle.text = "Donate";
 </script>
 
-<p>Make a donation here!</p>
+<p>Enter a location here!</p>
