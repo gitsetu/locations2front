@@ -1,5 +1,6 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
+    import { loggedInUser } from "$lib/runes.svelte";
     import Message from "$lib/ui/Message.svelte";
     import UserCredentials from "$lib/ui/UserCredentials.svelte";
 
@@ -8,11 +9,19 @@
     let message = $state("");
 
     async function login() {
-        const success = false;
+        // const success = false;
+        // fixme : forced to true for testing
+        const success = true;
         if (success) {
+            // const success = false;
+            // fixme : forced logged in user for testing
+            loggedInUser.email = email;
+
             goto("/donate");
         } else {
-            message = "Error Trying to login in";
+            email = "";
+            password = "";
+            message = "Invalid Credentials";
         }
     }
 </script>
