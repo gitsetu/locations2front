@@ -9,13 +9,13 @@
     let message = $state("");
 
     async function login() {
-        // const success = false;
+        const success = false;
         // fixme : forced to true for testing
-        const success = true;
+        // const success = true;
         if (success) {
-            // const success = false;
+            const success = false;
             // fixme : forced logged in user for testing
-            loggedInUser.email = email;
+            // loggedInUser.email = email;
 
             goto("/donate");
         } else {
