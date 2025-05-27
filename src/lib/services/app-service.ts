@@ -1,7 +1,7 @@
 import axios from "axios";
-import type { Session, User } from "$lib/types/donation-types";
+import type { Session, User, Collection, Place } from "$lib/types/app-types";
 
-export const donationService = {
+export const appService = {
   baseUrl: "http://localhost:4000",
 
   async signup(user: User): Promise<boolean> {

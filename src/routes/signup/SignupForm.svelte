@@ -3,8 +3,8 @@
     import UserCredentials from "$lib/ui/UserCredentials.svelte";
     import UserDetails from "$lib/ui/UserDetails.svelte";
     import Message from "$lib/ui/Message.svelte";
-    // import {User} from "../../lib/types/donation-types";
-    import { donationService } from "$lib/services/donation-service";
+    // import {User} from "../../lib/types/place-types";
+    import { appService } from "$lib/services/app-service";
 
     let firstName = $state("");
     let lastName = $state("");
@@ -28,7 +28,7 @@
         };
         console.log("function signup user: ")
         console.log(user)
-        let success = await donationService.signup(user);
+        let success = await appService.signup(user);
         console.log("success: ", success)
         if (success) {
             goto("/login");
@@ -45,7 +45,7 @@
   <UserDetails bind:firstName bind:lastName />
   <UserCredentials bind:email bind:password />
   <button onclick={() => signup()} class="button">Sign Up</button>
-  <p class="has-text-centered">
+  <p class="has-text-centered is-size-6">
     Already have an account? <a href="/login" data-cy="login-redirect">Login Here</a>
   </p>
 </div>

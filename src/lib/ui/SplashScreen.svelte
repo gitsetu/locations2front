@@ -10,7 +10,7 @@
         </div>
         <div class="column is-6 is-offset-1">
           <h1 class="title is-2 mb-5">
-            <span class="icon mr-5"><i class="fas fa-map-marker-alt"></i></span><span class="icon mr-4"><i class="fas fa-vote-yea"></i></span>
+            <span class="icon mr-5"><i class="fas fa-map-marker-alt"></i></span><span class="icon mr-4"><i class="fas fa-code-branch"></i></span>
             <p>Locations</p>
           </h1>
           <h2 class="subtitle is-4 mt-2">Organize your places!</h2>
