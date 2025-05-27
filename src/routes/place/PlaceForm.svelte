@@ -24,8 +24,9 @@
 
     let title = $state("Interesting Place");
     let selectedCollection = $state("Town, Park");
-    let categories = ["urban", "nature"];
-    let selectedCategory = $state("nature");
+    let categories = ["Park", "Lake"];
+    let selectedCategory = $state("Park");
+    let message = $state("Please Donate");
 
     let latitude = $state(52.160858);
     let longitude = $state(-7.15242);
@@ -42,20 +43,22 @@
         if (selectedCollection && title && selectedCategory) {
             const collection = collections.find((collection) => collection._id === selectedCollection);
             if (collection) {
+                console.log("collection: ", collection)
                 const place: Place = {
                     title: title,
                     category: selectedCategory,
-                    collectionid: selectedCollection.id,
+                    collectionid: selectedCollection,
                     latitude: latitude,
                     longitude: longitude,
                     // user: loggedInUser._id
                 };
+                console.log("place: ", place)
                 const success = await appService.addPlace(place, loggedInUser.token);
                 if (!success) {
                     message = "Place not added - some error occurred";
                     return;
                 }
-                message = `Thanks! You added the place ${title} to ${collection.title} ${category}`;
+                message = `Thanks! You added the place: ${title}, with category: ${category}, to ${collection.title}`;
             }
         } else {
             message = "Please enter title, category and collection";
@@ -82,7 +85,7 @@
     <div class="select">
       <select bind:value={selectedCollection}>
         {#each collections as collection}
-          <option>{collection.title},{collection.id}</option>
+          <option value={collection._id}>{collection.title}</option>
         {/each}
       </select>
     </div>
