@@ -1,11 +1,11 @@
 <script lang="ts">
     import { subTitle } from "$lib/runes.svelte";
     import Card from "$lib/ui/Card.svelte";
-    import DonationList from "$lib/ui/DonationList.svelte";
+    import Places from "$lib/ui/Places.svelte";
 
-    subTitle.text = "Donations to date";
+    subTitle.text = "Places added";
 </script>
 
-<Card title="Donations">
-  <DonationList />
+<Card title="Places">
+  <Places />
 </Card>

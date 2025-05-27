@@ -36,5 +36,42 @@ export const appService = {
       console.log(error);
       return null;
     }
+  },
+
+  async addPlace(place: Place, token: string) {
+    try {
+      axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+      const response = await axios.post(
+          this.baseUrl + "/api/collections/" + place.collectionid + "/places",
+          place
+      );
+      await this.getPlacess(loggedInUser.token);
+      return response.status == 200;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  },
+
+  async getCollections(token: string): Promise<Collection[]> {
+    try {
+      axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+      const response = await axios.get(this.baseUrl + "/api/collections");
+      return response.data;
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
+  },
+
+  async getPlaces(token: string): Promise<Place[]> {
+    try {
+      axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+      const response = await axios.get(this.baseUrl + "/api/places");
+      return response.data;
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
   }
 };
