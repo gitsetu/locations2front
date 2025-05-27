@@ -6,7 +6,10 @@ export const appService = {
   // baseUrl: "http://localhost:4000",
 
   // on render
-  baseUrl: "http://locations-4j25:10000",
+  // baseUrl: "http://locations-4j25:10000",
+
+  // on glitch
+  baseUrl: "http://locations2.glitch.me:3000",
 
   async signup(user: User): Promise<boolean> {
     try {
