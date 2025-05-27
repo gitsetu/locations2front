@@ -23,10 +23,10 @@
     // ];
 
     let title = $state("Interesting Place");
-    let selectedCollection = $state("Town, Park");
+    let selectedCollection = $state("Park Favourites");
     let categories = ["Park", "Lake"];
     let selectedCategory = $state("Park");
-    let message = $state("Please Donate");
+    let message = $state("Add a place");
 
     let latitude = $state(52.160858);
     let longitude = $state(-7.15242);
