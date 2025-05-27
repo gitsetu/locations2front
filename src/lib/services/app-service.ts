@@ -45,7 +45,7 @@ export const appService = {
           this.baseUrl + "/api/collections/" + place.collectionid + "/places",
           place
       );
-      await this.getPlacess(loggedInUser.token);
+      await this.getPlaces(loggedInUser.token);
       return response.status == 200;
     } catch (error) {
       console.log(error);
