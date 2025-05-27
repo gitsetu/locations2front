@@ -2,7 +2,7 @@ import axios from "axios";
 import type { Session, User, Collection, Place } from "$lib/types/app-types";
 
 export const appService = {
-  baseUrl: "http://localhost:4000",
+  baseUrl: "http://localhost:3000",
 
   async signup(user: User): Promise<boolean> {
     try {
