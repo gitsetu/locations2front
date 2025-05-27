@@ -3,6 +3,8 @@
     import UserCredentials from "$lib/ui/UserCredentials.svelte";
     import UserDetails from "$lib/ui/UserDetails.svelte";
     import Message from "$lib/ui/Message.svelte";
+    // import {User} from "../../lib/types/donation-types";
+    import { donationService } from "$lib/services/donation-service";
 
     let firstName = $state("");
     let lastName = $state("");
@@ -10,10 +12,26 @@
     let password = $state("");
     let message = $state("");
 
+    // pre-populate for repeat testing
+    // let firstName = "new";
+    // let lastName = "new";
+    // let email = "new@new.com";
+    // let password = "new";
+    // let message = "";
+
     async function signup() {
-        const success = false;
+        const user: User = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password
+        };
+        console.log("function signup user: ")
+        console.log(user)
+        let success = await donationService.signup(user);
+        console.log("success: ", success)
         if (success) {
-            goto("/donate");
+            goto("/login");
         } else {
             message = "Error Trying to sign up";
         }

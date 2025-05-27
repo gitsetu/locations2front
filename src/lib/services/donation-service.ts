@@ -6,8 +6,13 @@ export const donationService = {
 
   async signup(user: User): Promise<boolean> {
     try {
+      // fixme
+      console.log('Signing up user:', user.email);
       const response = await axios.post(`${this.baseUrl}/api/users`, user);
-      return response.data.success === true;
+      console.log('axios response:', response);
+      // return response.data.success === true;
+      // fixme : data.success property does not exist, fixed using "status"
+      return response.status === 201;
     } catch (error) {
       console.log(error);
       return false;
