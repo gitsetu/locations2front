@@ -12,7 +12,7 @@
     </div>
     <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item" href="/place"> Donate </a>
+        <a class="navbar-item" href="/place"> Places </a>
         <a class="navbar-item" href="/report"> Report </a>
         <a class="navbar-item" href="/logout"> Logout [{loggedInUser.email}]</a>
       </div>
