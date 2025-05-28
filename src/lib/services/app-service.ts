@@ -6,7 +6,7 @@ export const appService = {
   // baseUrl: "http://localhost:3000",
 
   // on render
-  // baseUrl: "http://locations-4j25.onrender.com:10000",
+  // baseUrl: "http://locations-4j25.onrender.com:3000",
 
   // on glitch
   baseUrl: "http://locations2.glitch.me:3000",
@@ -17,9 +17,9 @@ export const appService = {
       console.log('Signing up user:', user.email);
       const response = await axios.post(`${this.baseUrl}/api/users`, user);
       console.log('axios response:', response);
-      // return response.data.success === true;
+      return response.data.success === true;
       // fixme : data.success property does not exist, fixed using "status"
-      return response.status === 201;
+      // return response.status === 201;
     } catch (error) {
       console.log(error);
       return false;
