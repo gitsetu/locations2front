@@ -59,7 +59,7 @@
   <Coordinates bind:latitude bind:longitude />
   <div class="field">
     <div class="control">
-      <button onclick={() => place()} class="button">Donate</button>
+      <button onclick={() => place()} class="button">Add a Place</button>
     </div>
   </div>
 </div>

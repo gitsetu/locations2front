@@ -26,7 +26,7 @@
     let selectedCollection = $state("Town, Park");
     let categories = ["Park", "Lake"];
     let selectedCategory = $state("Park");
-    let message = $state("Please Donate");
+    let message = $state("Add a Place");
 
     let latitude = $state(52.160858);
     let longitude = $state(-7.15242);
