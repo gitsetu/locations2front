@@ -2,14 +2,7 @@ import axios from "axios";
 import type { Session, User, Collection, Place } from "$lib/types/app-types";
 
 export const appService = {
-  // on local
-  // baseUrl: "http://localhost:3000",
-
-  // on render   0O
-  // baseUrl: "http://locations-4j25.onrender.com:10000",
-
-  // on glitch
-  baseUrl: "http://locations2.glitch.me:3000",
+  baseUrl: "http://localhost:4000",
 
   async signup(user: User): Promise<boolean> {
     try {
@@ -17,9 +10,9 @@ export const appService = {
       console.log('Signing up user:', user.email);
       const response = await axios.post(`${this.baseUrl}/api/users`, user);
       console.log('axios response:', response);
-      return response.data.success === true;
+      // return response.data.success === true;
       // fixme : data.success property does not exist, fixed using "status"
-      // return response.status === 201;
+      return response.status === 201;
     } catch (error) {
       console.log(error);
       return false;
@@ -52,7 +45,7 @@ export const appService = {
           this.baseUrl + "/api/collections/" + place.collectionid + "/places",
           place
       );
-      await this.getPlaces(loggedInUser.token);
+      await this.getPlacess(loggedInUser.token);
       return response.status == 200;
     } catch (error) {
       console.log(error);
