@@ -3,7 +3,7 @@ import type { Session, User, Collection, Place } from "$lib/types/app-types";
 
 export const appService = {
   // on local
-  // baseUrl: "http://localhost:4000",
+  // baseUrl: "http://localhost:3000",
 
   // on render
   // baseUrl: "http://locations-4j25.onrender.com:10000",
